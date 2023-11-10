@@ -140,8 +140,10 @@ VALUES
     ALTER TABLE invoices
     RENAME COLUMN paymentdate TO paymenttime;
 
-    DELETE FROM appointments 
-    WHERE animalid = 8;
+    DELETE FROM appointments
+    WHERE animalid = (
+	SELECT animalid 
+	FROM animals WHERE name = 'Simba');
 
     UPDATE doctors
     SET lastname = 'Reyes-Gonzales'
@@ -152,3 +154,9 @@ VALUES
 
     SELECT SUM(amount) AS total_sales
     FROM sales;
+
+    SELECT COUNT(*) AS total_appointments
+    FROM appointments
+    JOIN animals ON appointments.animalid = animals.animalid
+    JOIN owners ON animals.ownerid = owners.ownerid
+    WHERE owners.ofirstname = 'Maria';
