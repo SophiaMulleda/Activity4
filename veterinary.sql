@@ -146,3 +146,6 @@ VALUES
     UPDATE doctors
     SET lastname = 'Reyes-Gonzales'
     WHERE firstname = 'Dr.Sofia' AND lastname = 'Reyes';
+
+    SELECT species 
+    FROM animals;
