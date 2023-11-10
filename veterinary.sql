@@ -160,3 +160,9 @@ VALUES
     JOIN animals ON appointments.animalid = animals.animalid
     JOIN owners ON animals.ownerid = owners.ownerid
     WHERE owners.ofirstname = 'Maria';
+
+    SELECT animal_id, COUNT(*) AS appointment_count
+    FROM appointments
+    GROUP BY animal_id
+    ORDER BY appointment_count DESC
+    LIMIT 1;
