@@ -150,6 +150,5 @@ VALUES
     SELECT species 
     FROM animals;
 
-    SELECT SUM(s.amount) AS total_sales
-    FROM sales s
-    JOIN veterinary v ON s.veterinary_id = v.veterinary_id;
+    SELECT SUM(amount) AS total_sales
+    FROM sales;
