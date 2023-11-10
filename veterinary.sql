@@ -142,3 +142,7 @@ VALUES
 
     DELETE FROM appointments 
     WHERE animalid = 8;
+
+    UPDATE doctors
+    SET lastname = 'Reyes-Gonzales'
+    WHERE firstname = 'Dr.Sofia' AND lastname = 'Reyes';
