@@ -40,14 +40,14 @@ Create TABLE doctors (
 );
 
 CREATE TABLE invoices (
-    invoices INT PRIMARY KEY,
+    invoiceid PRIMARY KEY,
     appointid INT,
     totalamount NUMERIC(10,2),
-    payment date TIME,
-    FOREIGN KEY (appointid) REFFERENCES appointments(appointid)
+    paymentdate TIME,
+    FOREIGN KEY (appointid) REFERENCES appointments(appointid)
 );
 CREATE TABLE medicalrecords (
-    recordid PRIMARY KEY,
+    recordid INT PRIMARY KEY,
     animalid INT,
     recorddate TIMESTAMP,
     doctorid INT,
@@ -69,20 +69,20 @@ VALUES
 (7, 'Luis', 'Torres', '555 Maple St, Mandaluyong', '123-555-7777', 'luis@examaple.com'),
 (8, 'Carmen', 'Fernandez', '222 Birch St, Taguig', '333-222-1111', 'carmen@examaple.com'),
 (9, 'Pedro', 'Santillan', '888 Spruce St, Bacolod', '888-777-6666', 'pedro@examaple.com'),
-(10, 'Sofia', 'Villanueva', '777 Walnut St, Iloilo', '111-999-3333', 'sofia@examaple.com'),
+(10, 'Sofia', 'Villanueva', '777 Walnut St, Iloilo', '111-999-3333', 'sofia@examaple.com');
 
 INSERT INTO animals(animalid, name , species, breed , dateofbirth, gender, color , ownerid)
 VALUES
-(1, Fido, Dog, Golder Retriever, 2018-03-15, Male, Golden , 1),
-(2, Whiskers, Cat, Siamese, 2019-07-20, Female, Cream, 2,),
-(3, Rocky, Dog, German Shepherd, 2017-05-10, Male, black and Tan, 3),
-(4, Fluffy, Cat, Persian, 2020-01-30, Male, White, 4),
-(5, Luna, Dog, Labrador Retriever, 2019-11-25, Female, Yellow, 5),
-(6, Mochi, Cat, Maine Coon, 2018-09-12, Male, Brown Tabby, 6),
-(7, Bella, Dog, Poddie, 2020-04-05, Female, White, 7),
-(8, Simba, Cat, Bengal, 2018-06-18, Male, Spotted Rosetted, 8),
-(9, Max, Dog, Dachshund, 2020-07-14, Male, Black and Tan, 9),
-(10, cleo, Cat, Ragdoll, 2019-12-22, Female, Seal Point, 10),
+(1, 'Fido', 'Dog', 'Golder' 'Retriever', '2018-03-15', 'Male', 'Golden' , 1),
+(2, 'Whiskers', 'Cat', 'Siamese', '2019-07-20', 'Female', 'Cream', 2),
+(3, 'Rocky', 'Dog', 'German Shepherd', '2017-05-10', 'Male', 'black and Tan', 3),
+(4, 'Fluffy', 'Cat', 'Persian', '2020-01-30', 'Male', 'White', 4),
+(5, 'Luna', 'Dog', 'Labrador Retriever', '2019-11-25', 'Female', 'Yellow', 5),
+(6, 'Mochi', 'Cat', 'Maine Coon', '2018-09-12','Male', 'Brown Tabby', 6),
+(7, 'Bella', 'Dog', 'Poddie', '2020-04-05', 'Female', 'White', 7),
+(8, 'Simba', 'Cat', 'Bengal', '2018-06-18', 'Male', 'Spotted Rosetted', 8),
+(9, 'Max', 'Dog', 'Dachshund', '2020-07-14', 'Male', 'Black and Tan', 9),
+(10, 'cleo', 'Cat', 'Ragdoll', '2019-12-22', 'Female', 'Seal Point', 10);
 
 INSERT INTO appointments(appointid, animalid, appointdate, reason)
 VALUES 
@@ -95,7 +95,7 @@ VALUES
 (7, 7, '2023-04-12', 'Vaccination'),
 (8, 8, '2023-04-18', 'Spaying/neutering'),
 (9, 9, '2023-05-02', 'Allergy treatment'),
-(10, 10, '2023-05-20', 'Eye infection'),
+(10, 10, '2023-05-20', 'Eye infection');
 
 INSERT INTO doctors(doctorid, dfirstname, dlastname, speciality, phone, email)
 VALUES
